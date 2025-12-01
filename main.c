@@ -166,7 +166,7 @@ void TimeDiffSync() {
 	Temp_D = Curr_D;
 	printf("업데이트 된 일차 : Day %d\n\n", day);
 }
-//메인 콘솔 [미완]
+//메인 콘솔
 int GeneralConsole(){
 	int TempConAns = 0;
 	if (DayChk == 0) { CurrentDay(); }
