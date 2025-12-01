@@ -3,6 +3,7 @@
 #include<stdio.h>
 #include <windows.h>
 #include <time.h>
+#include <direct.h>
 
 	int firsttimeboot = 1;
 	int trackmethod = 0;
@@ -10,7 +11,10 @@
 	int noRS = 0;
 	int Curr_Y, Curr_M, Curr_D;
 	int Temp_Y, Temp_M, Temp_D;
-	float Curr_cal, Curr_carb, Curr_prot, Curr_fat = 0.0;
+	float Curr_cal = 0.0;
+	float Curr_carb = 0.0;
+	float Curr_prot = 0.0;
+	float Curr_fat = 0.0;
 	int minuskcal = 0;
 	int day = 1;
 	int DayChk = 0;
@@ -234,8 +238,12 @@ void InputMacro(){
 void KcalMinus() {
 	ResetScreen();
 	int tempn = 0;
+	printf("(뒤로 가려면 -1을 입력하세요.)\n");
 	printf("소모한 칼로리를 입력해 주세요 : ");
 	scanf_s("%d",&tempn);
+	if (tempn == -1) {
+		return;
+	}
 	minuskcal += tempn;
 }
 //데이체크 트리거
